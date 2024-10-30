@@ -17,14 +17,25 @@ header {
     width: 100%;
     text-align: center;
     align-items: center;
+    padding: 20px;
+}
+
+header * {
+    display: inline-block;
+    padding: 10px;
 }
 
 main {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 20px;
     text-align: center;
     align-items: center;
+}
+
+main section {
+    padding: 5px 20px 40px 20px;
 }
 
 footer {
@@ -54,7 +65,7 @@ footer div {
 
 a {
     text-decoration: none;
-    color: inherit
+    color: inherit;
 }
 
 .button-group {
@@ -79,9 +90,12 @@ a {
     background-color: #09004266;
     text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
+    text-transform: capitalize;
     border: none;
+}
+
+.button i {
+    margin-right: 15px;
 }
 
 .button:hover {
@@ -89,14 +103,24 @@ a {
 }
 
 .gallery-button {
-    background-color: #FFB0E44A
+    background-color: #FFB0E44A;
+    font-weight: 700;
 }
 
 .gallery-button:hover {
-    background-color: #EB3FB070
+    background-color: #EB3FB070;
 }
 
 h1 {
     font-size: 2em;
     font-weight: 700;
+}
+
+.love-heart {
+    transition: transform 1s, color 1s;
+}
+
+.love-heart:hover {
+    color: #FF8AE5;
+    transform: scale(1.5);
 }
