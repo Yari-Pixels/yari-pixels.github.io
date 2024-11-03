@@ -14,9 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function loadJSON() {
-        //file = fetch("images.json");
-        
-        file=
+        file = fetch("images.json");
         
         data = JSON.parse(file);
 
