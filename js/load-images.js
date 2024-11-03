@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     async function loadJSON() {
-        let response = await fetch("images.json");
+        let response = await fetch("js/images.json");
         console.log(response);
         let data = await response.json();
         console.log(data);
