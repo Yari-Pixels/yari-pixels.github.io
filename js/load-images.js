@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function loadJSON() {
         file = fetch("images.json");
         
-        data = JSON.parse(file);
+        data = response.json();
 
         data.images.forEach(item => createImageElement(item));
     }
