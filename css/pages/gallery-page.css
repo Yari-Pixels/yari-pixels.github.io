@@ -45,6 +45,7 @@ footer {
     margin: auto;
     transition-duration: 100ms;
     transform-origin: 0px 0px 0px;
+    background-color: #00000066;
 }
 
 @media (max-width: 550px) {
