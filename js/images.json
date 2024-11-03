@@ -1,16 +1,80 @@
 {
     "images": [
         {
-            "scr": "img/Barx20.png",
-            "alt": "Bar"
+            "scr": "img/BadResolution/old_lambo.png",
+            "alt": "old pixelart of purple lamborghini"
         },
         {
-            "scr": "img/Barx20.png",
-            "alt": "Bar"
+            "scr": "img/BadResolution/forest_cabin.jpg",
+            "alt": "wooden cabin with green background"
         },
         {
-            "scr": "img/Barx20.png",
-            "alt": "Bar"
+            "scr": "img/BadResolution/planting_pot.png",
+            "alt": "wooden planting pot"
+        },
+        {
+            "scr": "img/BadResolution/bar.jpg",
+            "alt": "old run down empty bar"
+        },
+        {
+            "scr": "img/BadResolution/bar_limonade.jpg",
+            "alt": "old run down empty bar with lemonade being served"
+        },
+        {
+            "scr": "img/BadResolution/distopian_city.jpg",
+            "alt": "pixelart of dystopian city scape"
+        },
+        {
+            "scr": "img/BadResolution/neon_city.jpg",
+            "alt": "pixelart of neon city scape"
+        },
+        {
+            "scr": "img/BadResolution/skyscrapper.jpg",
+            "alt": "simple skyscraper"
+        },
+        {
+            "scr": "img/BadResolution/Burger.png",
+            "alt": "burger with meat, salad and cheese"
+        },
+        {
+            "scr": "img/BadResolution/Submarine.jpg",
+            "alt": "ocean gate submarine"
+        },
+        {
+            "scr": "img/BadResolution/camera.jpg",
+            "alt": "old camera"
+        },
+        {
+            "scr": "img/BadResolution/demon.jpg",
+            "alt": "red demon"
+        },
+        {
+            "scr": "img/BadResolution/font.jpg",
+            "alt": "pixelated font"
+        },
+        {
+            "scr": "img/BadResolution/bobinka.jpg",
+            "alt": "czech locomotive nicknamed bobinka"
+        },
+        {
+            "scr": "img/BadResolution/eye.jpg",
+            "alt": "two red eyes"
+        },
+        {
+            "scr": "img/Item_Sprites.png",
+            "alt": "assortment of crop ans tool sprites"
+        },
+        {
+            "scr": "img/Takodachi_1.png",
+            "alt": "Takodachi on a yellow background with letters spelling wah"
+        },
+        {
+            "scr": "img/Synth_City_1.png",
+            "alt": "Synthwave city street"
+        },
+        {
+            "scr": "img/Synth_City_2.png",
+            "alt": "Synthwave city street with two texts spelling retro night and 80's hits"
         }
     ]
 }

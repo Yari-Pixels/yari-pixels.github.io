@@ -37,6 +37,9 @@ footer {
 
 #modal-display #modal-image {
     display: fixed;
+    height: 100vh;
+    width: auto;
+    image-rendering: pixelated;
     max-width: 80%;
     max-height: 90%;
     margin: auto;
