@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
         img.src = image.scr;
         img.alt = image.alt;
         img.classList.add('grid-item', 'gallery-image');
-        img.addEventListener('click', function () { openModal(); });
+        img.addEventListener('click', openModal);
 
         const container = document.getElementById('main-gallery');
         container.appendChild(img);
