@@ -1,0 +1,28 @@
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+.center {
+    align-items: center;
+    align-content: center;
+}
+
+.grid {
+    gap: 30px;
+    grid-auto-flow: dense;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}

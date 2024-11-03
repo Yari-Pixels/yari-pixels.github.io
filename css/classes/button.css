@@ -1,0 +1,65 @@
+.button-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+}
+
+.button-row .button {
+    width: fit-content;
+    padding: 5px 10px;
+    margin: 0px 5px;
+}
+
+.button-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.button-list .button {
+    margin: 10px 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    max-width: 600px;
+    font-size: 1em;
+}
+
+.button {
+    display: inline-block;
+    color: white;
+    background-color: #09004266;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    border: none;
+}
+
+.button i {
+    margin-right: 15px;
+}
+
+.button:hover {
+    background-color: #0900428C;
+}
+
+.main-button {
+    background-color: #FFB0E44A;
+    font-weight: 700;
+}
+
+.main-button:hover {
+    background-color: #EB3FB070;
+}
+
+.invisible-button {
+    background-color: #00000000;
+}
+
+.invisible-button:hover {
+    background-color: #09004266;
+}

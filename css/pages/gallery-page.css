@@ -1,0 +1,52 @@
+@import "../classes/button.css";
+@import "../classes/flex.css";
+@import "../classes/gallery.css";
+@import "../main.css";
+
+header {
+    padding: 20px;
+    background-color: #09004266;
+    text-align: center;
+}
+
+header a {
+    padding: 10px;
+}
+
+header * {
+    margin: 10px;
+}
+
+main {
+    padding: 40px 20px;
+}
+
+footer {
+    background-color: #09004266;
+}
+
+#modal-display {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #00000066;
+}
+
+#modal-display #modal-image {
+    display: fixed;
+    max-width: 80%;
+    max-height: 90%;
+    margin: auto;
+    transition-duration: 100ms;
+    transform-origin: 0px 0px 0px;
+}
+
+@media (max-width: 550px) {
+    #modal-display #modal-image {
+        max-width: 100%;
+        max-height: 90%;
+    }
+}
