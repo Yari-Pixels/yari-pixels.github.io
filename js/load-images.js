@@ -7,18 +7,19 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("AAAAAAAAAa")
         img.src = "img/blue_tit(big).png";
         img.alt = "OUCH";
-        img.classList.add('grid-item', 'gallery-image'); 
+        img.classList.add('grid-item', 'gallery-image');
 
         const container = document.getElementById('main-gallery');
         container.appendChild(img);
-    }
+    };
 
-    function loadJSON() {
-        response = fetch("images.json");
-        
-        data = response.json();
+    async function loadJSON() {
+        let response = await fetch("images.json");
+        console.log(response);
+        let data = await response.json();
+        console.log(data);
 
         data.images.forEach(item => createImageElement(item));
-    }
+    };
 });
 
