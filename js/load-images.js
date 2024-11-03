@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function createImageElement(image) {
         const img = document.createElement('img');
         console.log("AAAAAAAAAa")
-        img.src = "img/blue_tit(big).png";
-        img.alt = "OUCH";
+        img.src = image.scr;
+        img.alt = image.alt;
         img.classList.add('grid-item', 'gallery-image');
-        img.addEventListener('click', openModal);
+        img.addEventListener('click', function () { openModal(); });
 
         const container = document.getElementById('main-gallery');
         container.appendChild(img);
