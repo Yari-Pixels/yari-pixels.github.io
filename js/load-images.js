@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         img.src = "img/blue_tit(big).png";
         img.alt = "OUCH";
         img.classList.add('grid-item', 'gallery-image');
+        img.addEventListener('click', openModal);
 
         const container = document.getElementById('main-gallery');
         container.appendChild(img);
