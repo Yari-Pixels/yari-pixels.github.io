@@ -19,6 +19,11 @@
     align-content: center;
 }
 
+.space-between {
+    align-items: center;
+    align-content: space-between;
+}
+
 .grid {
     gap: 30px;
     grid-auto-flow: dense;

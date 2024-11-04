@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const stepSize = 0.001;
 
     const modalContainer = document.getElementById('modal-display');
+    const AspectRatioContainer = document.getElementById('aspect-ratio-container');
     const modalImage = document.getElementById('modal-image');
 
     loadJSON();
@@ -52,6 +53,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         currentGallery = Array.from(this.parentElement.querySelectorAll(".gallery-image"));
         indexOfImage = currentGallery.indexOf(this);
+        
+        let imageRect = modalImage.getBoundingClientRect();
+        
+        modalImage.style.width = "100%"
+        modalImage.style.aspectRatio = imageRect.width + "/" + imageRect.height;
+        AspectRatioContainer.style.aspectRatio = imageRect.width + "/" + imageRect.height;
 
         disableScroll();
     }
@@ -67,6 +74,9 @@ document.addEventListener('DOMContentLoaded', function () {
         offsetX = 0;
         offsetY = 0;
         modalImage.style.transform = "scale(1) translate(0px, 0px)";
+        modalImage.style.aspectRatio = "unset";
+        modalImage.style.width = "auto";
+        modalImage.style.height = "auto";
     }
 
     function nextImage(direction) {
@@ -74,10 +84,16 @@ document.addEventListener('DOMContentLoaded', function () {
         indexOfImage = indexOfImage < 0 ? currentGallery.length - 1 : indexOfImage;
         indexOfImage = indexOfImage > currentGallery.length - 1 ? 0 : indexOfImage;
 
+        resetModalImage();
+
         modalImage.src = currentGallery[indexOfImage].src;
         modalImage.alt = currentGallery[indexOfImage].alt;
 
-        resetModalImage();
+        let imageRect = modalImage.getBoundingClientRect();
+        
+        modalImage.style.width = "100%"
+        modalImage.style.aspectRatio = imageRect.width + "/" + imageRect.height;
+        AspectRatioContainer.style.aspectRatio = imageRect.width + "/" + imageRect.height;
     }
 
     function zoomImage(e) {
