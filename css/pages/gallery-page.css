@@ -42,6 +42,14 @@ footer {
     transition: transform 500ms;
 }
 
+#modal-prev-arrow {
+    margin-left: 0;
+}
+
+#modal-next-arrow {
+    margin-right: 0;
+}
+
 #modal-display i:hover {
     transform: scale(1.5);
 }
@@ -49,17 +57,17 @@ footer {
 #modal-display #modal-image {
     display: block; 
     image-rendering: pixelated;
-    max-width: 100%;
-    margin: auto;
     transition-duration: 100ms;
     transform-origin: 0px 0px 0px;
     background-color: #00000066;
 }
 
 #modal-display #aspect-ratio-container {
+    display: flex;
     height: 100vh;
-    max-width: 90%;
+    max-width: 50%;
     max-height: 90vh;
+    align-items: center;
     margin: auto;
 }
 
@@ -67,22 +75,14 @@ footer {
     #modal-display #aspect-ratio-container {
         max-width: 100%;
     }
+
+    #modal-prev-arrow {
+        position: fixed;
+        left: 0;
+    }
+    
+    #modal-next-arrow {
+        position: fixed;
+        right: 0;
+    }
 }
-
-
-
-
-/* 
-div {
-  height: 100vh;
-  max-width:1000px;
-  max-height:100px;
-  aspect-ratio: 3/2;
-}
-section {
-  background-color: red;
-  width: 100%;
-  max-width: 100%;
-  aspect-ratio: 3/2;
-}
-*/

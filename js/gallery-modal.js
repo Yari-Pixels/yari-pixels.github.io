@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         modalImage.style.width = "100%"
         modalImage.style.aspectRatio = imageRect.width + "/" + imageRect.height;
         AspectRatioContainer.style.aspectRatio = imageRect.width + "/" + imageRect.height;
+        modalImage.style.margin = "auto";
 
         disableScroll();
     }
