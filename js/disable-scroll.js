@@ -18,8 +18,11 @@ function preventKeyScroll(e) {
     const keys = [
         'ArrowUp', 'ArrowDown',
         'PageUp', 'PageDown',
-        'Home', 'End'
+        'Home', 'End',
+        ' '
     ];
+
+    console.log(e.key);
 
     if (keys.includes(e.key)) {
         e.preventDefault();

@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     modalImage.addEventListener("wheel", zoomImage);
 
+    document.getElementById('modal-prev-arrow').addEventListener('click', function () {nextImage(-1)});
+    document.getElementById('modal-next-arrow').addEventListener('click', function () {nextImage(1)});
+
+
     window.addEventListener('keydown', function (event) {
         if (modalContainer.style.display === "none")
             return
