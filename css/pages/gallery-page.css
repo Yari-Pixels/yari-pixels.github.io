@@ -37,17 +37,18 @@ footer {
 }
 
 #modal-display i {
+    position: fixed;
     padding: 100vh 40px;
     z-index: 2;
     transition: transform 500ms;
 }
 
 #modal-prev-arrow {
-    margin-left: 0;
+    left: 0;
 }
 
 #modal-next-arrow {
-    margin-right: 0;
+    right: 0;
 }
 
 #modal-display i:hover {
@@ -65,24 +66,19 @@ footer {
 #modal-display #aspect-ratio-container {
     display: flex;
     height: 100vh;
-    max-width: 50%;
+    max-width: 75%;
     max-height: 90vh;
     align-items: center;
     margin: auto;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 700px) {
     #modal-display #aspect-ratio-container {
         max-width: 100%;
     }
 
-    #modal-prev-arrow {
-        position: fixed;
-        left: 0;
-    }
-    
+    #modal-prev-arrow,
     #modal-next-arrow {
-        position: fixed;
-        right: 0;
+        display: none;
     }
 }
