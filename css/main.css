@@ -3,6 +3,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #700E63 #191F58;
+}
+
 body {
     background: linear-gradient(45deg, #0E2257 0%, #B0006A 95%);
     font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -48,7 +53,7 @@ footer div {
 ::selection {
     color: white;
     background: #cb6ba4;
-  } 
+} 
 
 a {
     text-decoration: none;
