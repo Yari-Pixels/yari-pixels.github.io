@@ -1,3 +1,5 @@
+let images = undefined;
+
 document.addEventListener('DOMContentLoaded', function () {
 
     let currentImageId = undefined;
@@ -190,10 +192,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function loadJSON() {
         let response = await fetch("js/images.json");
-        let images = await response.json();
-        
+        images = await response.json();
+
         for (const [id, image] of Object.entries(images)) {
-            console.log(id)
             createImageElement(id, image)
         }
     };
