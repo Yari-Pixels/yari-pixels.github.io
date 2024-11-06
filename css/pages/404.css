@@ -1,0 +1,22 @@
+@import "../main.css";
+
+body {
+    text-align: center;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 15em;
+    margin-bottom: -50px;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 3.6em;
+    margin-bottom: 30px;
+}
+
+a {
+    font-size: 2em;
+    font-weight: 700
+}

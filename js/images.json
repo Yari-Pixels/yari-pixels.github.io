@@ -1,80 +1,127 @@
 {
-    "images": [
-        {
-            "scr": "img/Synth_City_2.png",
-            "alt": "Synthwave city street with two texts spelling retro night and 80's hits"
-        },
-        {
-            "scr": "img/Synth_City_1.png",
-            "alt": "Synthwave city street"
-        },
-        {
-            "scr": "img/Takodachi_1.png",
-            "alt": "Takodachi on a yellow background with letters spelling wah"
-        },
-        {
-            "scr": "img/Item_Sprites.png",
-            "alt": "assortment of crop ans tool sprites"
-        },
-        {
-            "scr": "img/BadResolution/eye.jpg",
-            "alt": "two red eyes"
-        },
-        {
-            "scr": "img/BadResolution/bobinka.jpg",
-            "alt": "czech locomotive nicknamed bobinka"
-        },
-        {
-            "scr": "img/BadResolution/demon.jpg",
-            "alt": "red demon"
-        },
-        {
-            "scr": "img/BadResolution/camera.jpg",
-            "alt": "old camera"
-        },
-        {
-            "scr": "img/BadResolution/Submarine.jpg",
-            "alt": "ocean gate submarine"
-        },
-        {
-            "scr": "img/BadResolution/Burger.png",
-            "alt": "burger with meat, salad and cheese"
-        },
-        {
-            "scr": "img/BadResolution/skyscrapper.jpg",
-            "alt": "simple skyscraper"
-        },
-        {
-            "scr": "img/BadResolution/neon_city.jpg",
-            "alt": "pixelart of neon city scape"
-        },
-        {
-            "scr": "img/BadResolution/distopian_city.jpg",
-            "alt": "pixelart of dystopian city scape"
-        },
-        {
-            "scr": "img/BadResolution/bar_limonade.jpg",
-            "alt": "old run down empty bar with lemonade being served"
-        },
-        {
-            "scr": "img/BadResolution/bar.jpg",
-            "alt": "old run down empty bar"
-        },
-        {
-            "scr": "img/BadResolution/plantnig_pot.png",
-            "alt": "wooden planting pot"
-        },
-        {
-            "scr": "img/BadResolution/forest_cabin.jpg",
-            "alt": "wooden cabin with green background"
-        },
-        {
-            "scr": "img/BadResolution/font.jpg",
-            "alt": "pixelated font"
-        },
-        {
-            "scr": "img/BadResolution/old_lambo.png",
-            "alt": "old pixelart of purple lamborghini"
-        }
-    ]
+    "25": {
+        "scr": "img/Synth_City_2.png",
+        "alt": "Synthwave city street with two texts spelling retro night and 80's hits",
+        "hover": "Time to hit those sweet sweet retro tunes"
+    },
+    "24": {
+        "scr": "img/Synth_City_1.png",
+        "alt": "Synthwave city street",
+        "hover": "Lost in the glow"
+    },
+    "23": {
+        "scr": "img/AE86.png",
+        "alt": "Toyota corolla AE86 in yellow with black trim",
+        "hover": "Kansei Doritos!"
+    },
+    "22": {
+        "scr": "img/Desktop_2.png",
+        "alt": "Image of old pc desktop where a video call is happening",
+        "hover": "Now in color!"
+    },
+    "21": {
+        "scr": "img/Desktop_1.png",
+        "alt": "Image of old pc desktop where a video call is happening",
+        "hover": "Can you tell I was obsessed with needy streamer overload?"
+    },
+    "20": {
+        "scr": "img/Virus_PC.png",
+        "alt": "Pixel-art of Pc desktop with virus installed",
+        "hover": "Let's not dwell on the absurdity of video chats in that era"
+    },
+    "19": {
+        "scr": "img/Girl_0.png",
+        "alt": "Pixel-art of a young girl",
+        "hover": "Looks cute, doesn't it?"
+    },
+    "18": {
+        "scr": "img/Airship.png",
+        "alt": "Old ship suspended from floating wooly mass, flying through air.",
+        "hover": "Empire of the clouds"
+    },
+    "17": {
+        "scr": "img/Old_Bar_2.png",
+        "alt": "Old bar with barman sitting behind it",
+        "hover": "I am very fond of the nameless barman"
+    },
+    "16": {
+        "scr": "img/Takodachi_1.png",
+        "alt": "Takodachi on a yellow background with letters spelling wah",
+        "hover": "WAH!"
+    },
+    "15": {
+        "scr": "img/Item_Sprites.png",
+        "alt": "assortment of crop ans tool sprites",
+        "hover": "Made during my second attempt at making a game"
+    },
+    "14": {
+        "scr": "img/BadResolution/eye.jpg",
+        "alt": "two red eyes",
+        "hover": "Always watching"
+    },
+    "13": {
+        "scr": "img/BadResolution/bobinka.jpg",
+        "alt": "czech locomotive nicknamed bobinka",
+        "hover": "Trains are cool"
+    },
+    "12": {
+        "scr": "img/BadResolution/demon.jpg",
+        "alt": "red demon",
+        "hover": "he scawy, big and hunqwy"
+    },
+    "11": {
+        "scr": "img/BadResolution/camera.jpg",
+        "alt": "old camera",
+        "hover": "Say cheers!"
+    },
+    "10": {
+        "scr": "img/BadResolution/Burger.png",
+        "alt": "burger with meat, salad and cheese",
+        "hover": "Tasty (っ˘ڡ˘ς)"
+    },
+    "9": {
+        "scr": "img/BadResolution/skyscrapper.jpg",
+        "alt": "simple skyscraper",
+        "hover": "Heavily inspired by art I found online"
+    },
+    "8": {
+        "scr": "img/BadResolution/neon_city.jpg",
+        "alt": "pixelart of neon city scape",
+        "hover": "Reskin of the distopian city"
+    },
+    "7": {
+        "scr": "img/BadResolution/distopian_city.jpg",
+        "alt": "pixelart of dystopian city scape",
+        "hover": "Distopian city that watches you back"
+    },
+    "6": {
+        "scr": "img/BadResolution/bar_limonade.jpg",
+        "alt": "old run down empty bar with lemonade being served",
+        "hover": "At least the drink helps cover the bad art behind it."
+    },
+    "5": {
+        "scr": "img/BadResolution/bar.jpg",
+        "alt": "old run down empty bar",
+        "hover": "I was obsessed the old bar aesthetic back then. I should make more of these"
+    },
+    "4": {
+        "scr": "img/BadResolution/font.jpg",
+        "alt": "pixelated font",
+        "hover": "Made for my 1st attempt at gamedev"
+    },
+    "3": {
+        "scr": "img/BadResolution/plantnig_pot.png",
+        "alt": "wooden planting pot",
+        "hover": "Made when I was 1st learning unity"
+    },
+    "2": {
+        "scr": "img/BadResolution/forest_cabin.jpg",
+        "alt": "wooden cabin with green background",
+        "hover": "Let's hope no masked weirdos show up"
+    },
+    "1": {
+        "scr": "img/BadResolution/old_lambo.png",
+        "alt": "old pixelart of purple lamborghini",
+        "hover": "It's not the best, but it's the oldest that survived to this day"
+    }
 }

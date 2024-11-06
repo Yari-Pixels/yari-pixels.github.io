@@ -1,7 +1,7 @@
+
 document.addEventListener('DOMContentLoaded', function () {
 
-    let currentGallery = undefined;
-    let indexOfImage = undefined;
+    let currentImageId = undefined;
 
     let offsetX = 0;
     let offsetY = 0;
@@ -68,21 +68,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function openModal() {
-        modalContainer.style.display = "flex";
-        modalImage.src = this.src;
-        modalImage.alt = this.alt;
+        currentImageId = this.id;
+        modalImage.src = images[currentImageId].src;
+        modalImage.alt = images[currentImageId].alt;
+        modalImage.title = images[currentImageId].hover;
 
-        currentGallery = Array.from(this.parentElement.querySelectorAll(".gallery-image"));
-        indexOfImage = currentGallery.indexOf(this);
-
-        let imageRect = modalImage.getBoundingClientRect();
-
-        modalImage.style.width = "100%"
-        modalImage.style.aspectRatio = imageRect.width + "/" + imageRect.height;
-        aspectRatioContainer.style.aspectRatio = imageRect.width + "/" + imageRect.height;
-        modalImage.style.margin = "auto";
-
+        let img = new Image();
+        img.src = images[currentImageId].src;
+        modalImage.style.aspectRatio = img.naturalWidth + "/" + img.naturalHeight
+        aspectRatioContainer.style.aspectRatio = img.naturalWidth + "/" + img.naturalHeight
         disableScroll();
+        modalContainer.style.display = "flex";
     }
 
     function closeModal() {
@@ -101,13 +97,13 @@ document.addEventListener('DOMContentLoaded', function () {
         let yDiff = touchStart.y - e.touches[0].clientY;
 
         if (Math.abs(xDiff) > Math.abs(yDiff)) {
-            modalImage.style.transform = "translate("+ -xDiff*1 +"px, 0px)";
-            modalImage.style.opacity = (250 - Math.abs(xDiff)) / 250;
-            if (xDiff > 250) {
+            modalImage.style.transform = "translate(" + -xDiff * 1 + "px, 0px)";
+            modalImage.style.opacity = (110 - Math.abs(xDiff)) / 110;
+            if (xDiff > 110) {
                 touchStart = undefined; //prevents from changing image multiple times in one swipe
                 nextImage(1)
-            } 
-            else if (xDiff < -250) {
+            }
+            else if (xDiff < -110) {
                 touchStart = undefined;
                 nextImage(-1)
             }
@@ -135,27 +131,26 @@ document.addEventListener('DOMContentLoaded', function () {
         offsetY = 0;
         modalImage.style.transform = "translate(0px, 0px) scale(1)";
         modalImage.style.aspectRatio = "unset";
-        modalImage.style.width = "auto";
-        modalImage.style.height = "auto";
         modalImage.style.opacity = "unset"
         modalContainer.style.opacity = "unset";
     }
 
     function nextImage(direction) {
-        indexOfImage += direction;
-        indexOfImage = indexOfImage < 0 ? currentGallery.length - 1 : indexOfImage;
-        indexOfImage = indexOfImage > currentGallery.length - 1 ? 0 : indexOfImage;
+        currentImageId -= direction;
+        let length = Object.keys(images).length
+        currentImageId = currentImageId < 1 ? length : currentImageId;
+        currentImageId = currentImageId > length ? 1 : currentImageId;
 
         resetModalImage();
 
-        modalImage.src = currentGallery[indexOfImage].src;
-        modalImage.alt = currentGallery[indexOfImage].alt;
+        modalImage.src = images[currentImageId].src;
+        modalImage.alt = images[currentImageId].alt;
+        modalImage.title = images[currentImageId].hover;
 
-        let imageRect = modalImage.getBoundingClientRect();
-
-        modalImage.style.width = "100%"
-        modalImage.style.aspectRatio = imageRect.width + "/" + imageRect.height;
-        aspectRatioContainer.style.aspectRatio = imageRect.width + "/" + imageRect.height;
+        let img = new Image();
+        img.src = images[currentImageId].src;
+        modalImage.style.aspectRatio = img.naturalWidth + "/" + img.naturalHeight;
+        aspectRatioContainer.style.aspectRatio = img.naturalWidth + "/" + img.naturalHeight;
     }
 
     function zoomImage(e) {
@@ -194,21 +189,26 @@ document.addEventListener('DOMContentLoaded', function () {
         e.stopPropagation();
     }
 
-    function createImageElement(image) {
+    async function loadJSON() {
+        let response = await fetch("js/images.json");
+        let images = await response.json();
+
+        for (const [id, image] of Object.entries(images)) {
+            console.log(id)
+            createImageElement(id, image)
+        }
+        //images.forEach(item => createImageElement(item));
+    };
+
+    function createImageElement(id, image) {
         const img = document.createElement('img');
-        img.src = image.scr;
+        img.id = id;
+        img.src = image.src;
         img.alt = image.alt;
         img.classList.add('grid-item', 'gallery-image');
         img.addEventListener('click', openModal);
 
         const container = document.getElementById('main-gallery');
-        container.appendChild(img);
-    };
-
-    async function loadJSON() {
-        let response = await fetch("js/images.json");
-        let data = await response.json();
-
-        data.images.forEach(item => createImageElement(item));
+        container.prepend(img);
     };
 });
