@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let offsetY = 0;
 
     let touchStart = undefined;
+    let touchLast = undefined;
 
     let currentZoom = 1;
     const minZoom = 1;
@@ -47,11 +48,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.addEventListener('touchend', function () {
-        if (!touchStart || currentZoom != 1)
+        if (!touchStart || currentZoom != 1 || modalContainer.style.display === "none")
             return;
-        if (modalContainer.style.display === "none")
-            enableScroll();
-        touchScrollEnd();
+        touchScrollEnd(event);
     });
 
     window.addEventListener('keydown', function (event) {
@@ -69,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function openModal() {
+        disableScroll();
         currentImageId = this.id;
         modalImage.src = images[currentImageId].src;
         modalImage.alt = images[currentImageId].alt;
@@ -78,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
         img.src = images[currentImageId].src;
         modalImage.style.aspectRatio = img.naturalWidth + "/" + img.naturalHeight
         aspectRatioContainer.style.aspectRatio = img.naturalWidth + "/" + img.naturalHeight
-        disableScroll();
         modalContainer.style.display = "flex";
     }
 
@@ -90,37 +89,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function touchScrollStart(e) {
-        touchStart = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        touchStart = { 
+            x: e.touches[0].clientX,
+            y: e.touches[0].clientY 
+        };
+        touchLast = {
+            x: 0,
+            y: 0 
+        };
     };
 
     function touchScroll(e) {
-        let xDiff = touchStart.x - e.touches[0].clientX;
-        let yDiff = touchStart.y - e.touches[0].clientY;
+        touchLast.x = touchStart.x - e.touches[0].clientX,
+        touchLast.y = touchStart.y - e.touches[0].clientY
 
-        if (Math.abs(xDiff) > Math.abs(yDiff)) {
-            modalImage.style.transform = "translate(" + -xDiff * 1 + "px, 0px)";
-            modalImage.style.opacity = (110 - Math.abs(xDiff)) / 110;
-            if (xDiff > 110) {
-                touchStart = undefined; //prevents from changing image multiple times in one swipe
-                nextImage(1)
-            }
-            else if (xDiff < -110) {
-                touchStart = undefined;
-                nextImage(-1)
-            }
+        if (Math.abs(touchLast.x) > Math.abs(touchLast.y)) {
+            modalImage.style.transform = "translate(" + -touchLast.x * 2 + "px, 0px)";
+            modalImage.style.opacity = (110 - Math.abs(touchLast.x)) / 110;
         }
         else {
-            modalImage.style.transform = "translate(0px, " + -yDiff + "px)";
-            modalImage.style.opacity = (250 - Math.abs(yDiff)) / 250;
-            modalContainer.style.opacity = (250 - Math.abs(yDiff)) / 250;
-            if (Math.abs(yDiff) > 250) {
-                closeModal();
-                disableScroll(); //scroll should only be re-enabled once the touch which closed the image ends
-            }
+            modalImage.style.transform = "translate(0px, " + -touchLast.y + "px)";
+            modalImage.style.opacity = (250 - Math.abs(touchLast.y)) / 250;
+            modalContainer.style.opacity = (250 - Math.abs(touchLast.y)) / 250;
         }
     }
 
-    function touchScrollEnd() {
+    function touchScrollEnd(e) {
+        console.log(touchLast.x);   
+        if (Math.abs(touchLast.x) > Math.abs(touchLast.y)) {
+            if (touchLast.x > 100) {
+                nextImageSwipe(1);
+                return
+            }
+            if (touchLast.x < 100) {
+                nextImageSwipe(-1);
+                return
+            }
+        }
+        if (Math.abs(touchLast.y) > 150) {
+            closeModal();
+            return;
+        }
         modalImage.style.transform = "translate(0px, 0px) scale(1)";
         modalImage.style.opacity = "unset";
         modalContainer.style.opacity = "unset";
@@ -134,6 +143,15 @@ document.addEventListener('DOMContentLoaded', function () {
         modalImage.style.aspectRatio = "unset";
         modalImage.style.opacity = "unset"
         modalContainer.style.opacity = "unset";
+    }
+
+    function nextImageSwipe(direction) {
+        modalImage.classList.add("no-transition");
+        modalImage.style.transform = "translate(" + direction * 250 + "px, 0px)";
+        modalImage.style.opacity = 0;
+        modalImage.offsetHeight; //flushing the CSS changes by reading them
+        modalImage.classList.remove("no-transition");
+        nextImage(direction);
     }
 
     function nextImage(direction) {

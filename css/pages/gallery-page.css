@@ -25,6 +25,10 @@ footer {
     background-color: #09004266;
 }
 
+.no-transition{
+    transition: unset !important;
+}
+
 #modal-display {
     display: none;
     flex-direction: row;
