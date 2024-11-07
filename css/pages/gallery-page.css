@@ -3,6 +3,10 @@
 @import "../classes/gallery.css";
 @import "../main.css";
 
+body {
+    cursor: pointer;
+}
+
 header {
     padding: 20px;
     background-color: #09004266;
