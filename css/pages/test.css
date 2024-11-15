@@ -1,17 +1,57 @@
 @import "../main.css";
+@import "../classes/flex.css";
 
 body {
     display: flex;
+    text-align: center;
+}
+
+a {
+    font-weight: 700;
+}
+
+p {
+    display: inline;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#game-frame {
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 32px;
+    background-color: #FFB0E44A;
+}
+
+#game-frame>div{
+    padding-bottom: 20px;
 }
 
 #game {
-    margin: auto;
-    width: 1000px;
-    height: 700px;
     border: 0;
     box-sizing: border-box;
-    max-height: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    min-width: 100%
+    width: 970px;
+    height: 700px;
+    background-color: white;
+}
+
+#warning-message {
+    display: none;
+}
+
+br{
+    display: none;
+}
+
+@media (max-width: 1034px) {
+    #game,
+    #game-title p{
+        display: none;
+    }
+    #warning-message {
+        display: block;
+    }
+    .row {
+        justify-content: center;
+    }
 }

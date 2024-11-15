@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Subwater Trouble</title>
+
+    <meta name="description" content="Game made by a group of friends.">
+    <meta name="author" content="8-Bit Whiskers, Yari, Hernik, Werdy">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yari got lost</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/pages/test.css">
 </head>
 <body>
-    <iframe id="game" src="https://html-classic.itch.zone/html/10472471/index.html" frameborder="0" allowfullscreen="true" scrolling="no" allowtransparency="true" allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated; web-share" ></iframe>
+    <div id="game-frame">
+        <div id="warning-message">
+            <h1>warning!</h1>
+            <p>This game requires a larger screen to play. Please use a device with a suitable screen size</p>
+        </div>
+        <div class="row space-between">
+            <div id="game-title">
+                <a href="https://8bitwhiskers.itch.io/">Game by 8-Bit Whiskers</a>
+                <p href="https://8bitwhiskers.itch.io/">made for the 2024 pixel game jam</p>
+            </div>
+            <a href="https://8bitwhiskers.itch.io/subwater-trouble">Play on itch.io</a>
+        </div>
+        <iframe id="game" src="https://html-classic.itch.zone/html/10472471/index.html" frameborder="0" allowfullscreen="true" scrolling="no" allowtransparency="true" allow="autoplay; fullscreen *; midi; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated; web-share"></iframe>
+    </div>
 </body>
 </html>
