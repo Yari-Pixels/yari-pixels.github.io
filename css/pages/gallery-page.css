@@ -83,7 +83,7 @@ footer {
         transform 200ms,
         opacity 200ms;
     transform-origin: 0px 0px 0px;
-    background-color: #00000066;
+    background: linear-gradient(45deg, #0C144E 0%, #6E005A 95%);
 }
 
 @media (max-width: 700px) {

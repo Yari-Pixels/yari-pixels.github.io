@@ -1,0 +1,17 @@
+@import "../main.css";
+
+body {
+    display: flex;
+}
+
+#game {
+    margin: auto;
+    width: 1000px;
+    height: 700px;
+    border: 0;
+    box-sizing: border-box;
+    max-height: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    min-width: 100%
+}
