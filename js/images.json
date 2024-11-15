@@ -180,11 +180,11 @@
     },
     
     "12": {
-        "src": "img/camera30x30.png",
+        "src": "img/Camera30x30.png",
         "alt": "old camera",
         "hover": "Say cheers!",
         "thumb": {
-            "src": "img/camera30x30.png",
+            "src": "img/Camera30x30.png",
             "mode": "cover",
             "background": "#09004266",
             "position": "50% 50%"
@@ -192,11 +192,11 @@
     },
 
     "11": {
-        "src": "img/camera15x15.png",
+        "src": "img/Camera15x15.png",
         "alt": "old camera",
         "hover": "Say cheers!",
         "thumb": {
-            "src": "img/camera15x15.png",
+            "src": "img/Camera15x15.png",
             "mode": "cover",
             "background": "#09004266",
             "position": "50% 50%"
