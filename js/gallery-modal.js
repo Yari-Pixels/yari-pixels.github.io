@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     async function loadJSON() {
-        let response = await fetch("js/images.json");
+        let response = await fetch("./js/images.json");
         images = await response.json();
 
         for (const [id, image] of Object.entries(images)) {
