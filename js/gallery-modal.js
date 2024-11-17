@@ -89,19 +89,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function touchScrollStart(e) {
-        touchStart = { 
+        touchStart = {
             x: e.touches[0].clientX,
-            y: e.touches[0].clientY 
+            y: e.touches[0].clientY
         };
         touchLast = {
             x: 0,
-            y: 0 
+            y: 0
         };
     };
 
     function touchScroll(e) {
         touchLast.x = touchStart.x - e.touches[0].clientX,
-        touchLast.y = touchStart.y - e.touches[0].clientY
+            touchLast.y = touchStart.y - e.touches[0].clientY
 
         if (Math.abs(touchLast.x) > Math.abs(touchLast.y)) {
             modalImage.style.transform = "translate(" + -touchLast.x * 2 + "px, 0px)";
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function touchScrollEnd(e) {
-        console.log(touchLast.x);   
+        console.log(touchLast.x);
         if (Math.abs(touchLast.x) > Math.abs(touchLast.y)) {
             if (touchLast.x > 100) {
                 nextImageSwipe(1);
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     async function loadJSON() {
-        let response = await fetch("js/images.json");
+        let response = await fetch("./js/images.json");
         images = await response.json();
 
         for (const [id, image] of Object.entries(images)) {
@@ -220,8 +220,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function createImageElement(id, image) {
         const img = document.createElement('img');
         img.id = id;
-        img.src = image.src;
+        img.src = image.thumb.src;
         img.alt = image.alt;
+        img.style.objectFit = image.thumb.mode;
+        img.style.objectPosition = image.thumb.position;
+        img.style.backgroundColor = image.thumb.background;
         img.classList.add('grid-item', 'gallery-image');
         img.addEventListener('click', openModal);
 
