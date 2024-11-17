@@ -7,16 +7,40 @@ body {
 h1 {
     font-weight: 900;
     font-size: 15em;
-    margin-bottom: -50px;
+    margin-bottom: -0.2em;
 }
 
 h2 {
     font-weight: 700;
     font-size: 3.6em;
-    margin-bottom: 30px;
+    margin-bottom: 0.3em;
 }
 
 a {
     font-size: 2em;
     font-weight: 700
+}
+
+@media (max-width: 700px) {
+    body {
+        font-size: 10pt;
+    }
+}
+
+@media (max-width: 550px) {
+    body {
+        font-size: 8pt;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        font-size: 6pt;
+    }
+}
+
+@media (max-width: 250px) {
+    body {
+        font-size: 4pt;
+    }
 }

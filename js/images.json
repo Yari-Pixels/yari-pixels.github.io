@@ -2,7 +2,12 @@
     "25": {
         "src": "img/Synth_City_2.png",
         "alt": "Synthwave city street with two texts spelling retro night and 80's hits",
-        "hover": "Time to hit those sweet sweet retro tunes"
+        "hover": "Time to hit those sweet sweet retro tunes",
+        "thumb": {
+            "src": "img/Synth_City_2.png",
+            "mode": "cover",
+            "center": {"x": "50%", "y": "50%"}
+        }
     },
     "24": {
         "src": "img/Synth_City_1.png",
@@ -117,11 +122,21 @@
     "2": {
         "src": "img/BadResolution/forest_cabin.jpg",
         "alt": "wooden cabin with green background",
-        "hover": "Let's hope no masked weirdos show up"
+        "hover": "Let's hope no masked weirdos show up",
+        "thumb": {
+            "src": "img/BadResolution/forest_cabin.jpg",
+            "mode": "cover",
+            "center": {"x": "50%", "y": "50%"}
+        }
     },
     "1": {
         "src": "img/BadResolution/old_lambo.png",
-        "alt": "old pixelart of purple lamborghini",
-        "hover": "It's not the best, but it's the oldest that survived to this day"
+        "alt": "old pixel-art of purple lamborghini",
+        "hover": "It's not the best, but it's the oldest that survived to this day",
+        "thumb": {
+            "src": "img/BadResolution/old_lambo.png",
+            "mode": "cover",
+            "center": {"x": "50%", "y": "50%"}
+        }
     }
 }
