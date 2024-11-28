@@ -22,7 +22,7 @@ def setUp(filePath:str):
 
 def saveChanges (image:ImageData, filePath):
     image.src = "img/" + image.src
-    image.thumb.src = "img/" + image.src
+    image.thumb.src = "img/" + image.thumb.src
     source:str = filePath
     destination:str = "../" + image.src
     copyfile(source, destination)
