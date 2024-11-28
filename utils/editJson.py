@@ -1,8 +1,6 @@
 import json
 from classes import ImageData, ThumbData
 from shutil import copyfile
-import tkinter as tk
-from tkinter import filedialog
 import os
 
 def processFilePath(filePath:str):
@@ -23,8 +21,9 @@ def setUp(filePath:str):
     return image
 
 def saveChanges (image:ImageData, filePath):
+    image.src = "img/" + image.src
     source:str = filePath
-    destination:str = "../img/" + image.src
+    destination:str = "../" + image.src
     copyfile(source, destination)
 
     with open ("../js/images.json", "r") as file:

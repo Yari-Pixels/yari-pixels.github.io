@@ -15,8 +15,8 @@ class Application(tk.Tk):
         self.thumbnail_frame = tk.Frame(self)
         self.button_frame = tk.Frame(self)
 
-        self.image_frame.pack(padx=10, pady=10)
-        self.thumbnail_frame.pack(padx=10, pady=10)
+        self.image_frame.pack(padx=10, pady=10, fill=tk.X)
+        self.thumbnail_frame.pack(padx=10, pady=10, fill=tk.X)
         self.button_frame.pack(padx=10, pady=10)
 
         self.createImageSection()
@@ -26,43 +26,55 @@ class Application(tk.Tk):
     def createImageSection(self):
         tk.Label(self.image_frame, text="Image").grid(row=0, column=0, columnspan=2)
 
-        tk.Label(self.image_frame, text="Src:").grid(row=1, column=0)
+        # Set a fixed width for the label column
+        label_width = 10  # Adjust this value as needed
+
+        tk.Label(self.image_frame, text="Src:", width=label_width, anchor='e').grid(row=1, column=0, sticky='ew')
         self.image_src = tk.Entry(self.image_frame)
-        self.image_src.grid(row=1, column=1)
+        self.image_src.grid(row=1, column=1, sticky='ew')
 
-        tk.Label(self.image_frame, text="Alt:").grid(row=2, column=0)
+        tk.Label(self.image_frame, text="Alt:", width=label_width, anchor='e').grid(row=2, column=0, sticky='ew')
         self.image_alt = tk.Entry(self.image_frame)
-        self.image_alt.grid(row=2, column=1)
+        self.image_alt.grid(row=2, column=1, sticky='ew')
 
-        tk.Label(self.image_frame, text="Hover:").grid(row=3, column=0)
+        tk.Label(self.image_frame, text="Hover:", width=label_width, anchor='e').grid(row=3, column=0, sticky='ew')
         self.image_hover = tk.Entry(self.image_frame)
-        self.image_hover.grid(row=3, column=1)
+        self.image_hover.grid(row=3, column=1, sticky='ew')
+
+        # Configure the column weights to allow expansion
+        self.image_frame.grid_columnconfigure(1, weight=1)
 
     def createThumbnailSection(self):
         tk.Label(self.thumbnail_frame, text="Thumbnail").grid(row=0, column=0, columnspan=2)
 
-        tk.Label(self.thumbnail_frame, text="Src:").grid(row=1, column=0)
-        self.thumbnail_src = tk.Entry(self.thumbnail_frame)
-        self.thumbnail_src.grid(row=1, column=1)
+        # Set a fixed width for the label column
+        label_width = 10  # Adjust this value as needed
 
-        tk.Label(self.thumbnail_frame, text="Mode:").grid(row=2, column=0)
+        tk.Label(self.thumbnail_frame, text="Src:", width=label_width, anchor='e').grid(row=1, column=0, sticky='ew')
+        self.thumbnail_src = tk.Entry(self.thumbnail_frame)
+        self.thumbnail_src.grid(row=1, column=1, sticky='ew')
+
+        tk.Label(self.thumbnail_frame, text="Mode:", width=label_width, anchor='e').grid(row=2, column=0, sticky='ew')
         self.thumbnail_mode = tk.StringVar(value="cover")    # default value
         thumbnail_mode_options = ["", "cover", "contain", "none"]
         self.thumbnail_mode_menu = ttk.OptionMenu(self.thumbnail_frame, self.thumbnail_mode, *thumbnail_mode_options)
-        self.thumbnail_mode_menu.grid(row=2, column=1)
+        self.thumbnail_mode_menu.grid(row=2, column=1, sticky='ew')
 
-        tk.Label(self.thumbnail_frame, text="Background:").grid(row=3, column=0)
+        tk.Label(self.thumbnail_frame, text="Background:", width=label_width, anchor='e').grid(row=3, column=0, sticky='ew')
         self.thumbnail_background = tk.Entry(self.thumbnail_frame)
-        self.thumbnail_background.grid(row=3, column=1)
+        self.thumbnail_background.grid(row=3, column=1, sticky='ew')
 
-        tk.Label(self.thumbnail_frame, text="Position:").grid(row=4, column=0)
+        tk.Label(self.thumbnail_frame, text="Position:", width=label_width, anchor='e').grid(row=4, column=0, sticky='ew')
         self.thumbnail_position = tk.Entry(self.thumbnail_frame)
-        self.thumbnail_position.grid(row=4, column=1)
+        self.thumbnail_position.grid(row=4, column=1, sticky='ew')
+
+        # Configure the column weights to allow expansion
+        self.thumbnail_frame.grid_columnconfigure(1, weight=1)
 
     def createButtons(self):
         tk.Button(self.button_frame, text="Open Image", command=self.fileOpenDialog).pack(side=tk.LEFT, padx=10)
         tk.Button(self.button_frame, text="Save", command=self.saveToJson).pack(side=tk.LEFT, padx=10)
-
+    
     def showWarning(self, text:str):
         messagebox.showwarning("warning", text)
 
